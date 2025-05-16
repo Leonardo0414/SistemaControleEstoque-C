@@ -1,6 +1,7 @@
 //Inclusao de Bibliotecas Externas
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 //Inclusao de Arquivo externo
 #include "../include/produto.h"
@@ -84,4 +85,68 @@ void atualizar_estoque() {
         }
     }
     printf("Produto nao encontrado!\n");
+}
+
+
+//Funcao Para Vender Produto
+void vender_produto(){
+    char continuar;
+    char nome[50];
+    int quantidade;
+    int i;
+
+    do{
+        // Limpa a tela
+        #ifdef _WIN32
+            system("cls");
+        #else
+            system("clear");
+        #endif
+
+        printf("===== VENDA DE PRODUTOS =====\n\n");
+
+        printf("Produtos disponiveis:\n"); //Listar os Profutos
+            for (i = 0; i < QTD_PRODUTOS; i++) {
+                if (strlen(produtos[i]) > 0) {
+                printf("- %s\n", produtos[i]);
+                }
+            }
+        printf("\nNome do produto (ou digite 'sair' para cancelar): ");
+            scanf(" %49[^\n]", nome);
+            while(getchar() != '\n');
+
+        if (strcmp(nome, "sair") == 0) {
+            break;
+        }
+    for (i = 0; i < QTD_PRODUTOS; i++) {
+        if (strcmp(produtos[i], nome) == 0) {
+            printf("Quantidade: ");
+            scanf("%d", &quantidade);
+            while(getchar() != '\n');
+
+                printf("\nVenda de %d unidades de %s realizada com sucesso!\n", 
+                quantidade, produtos[i]);
+
+                printf("\nDeseja realizar outra venda? (S/N): ");
+                scanf(" %c", &continuar);
+                while(getchar() != '\n'); 
+                break;
+        }
+    }
+
+        if (i == QTD_PRODUTOS) {
+            printf("\nProduto não encontrado!\n");
+            printf("Pressione Enter para continuar...");
+            getchar();
+        }
+
+
+    }while(continuar =='S' || continuar == 's');
+        //Limpar A Tela
+        #ifdef _WIN32
+            system("cls");
+        #else
+            system("clear");
+        #endif
+
 }

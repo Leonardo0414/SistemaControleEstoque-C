@@ -1,6 +1,7 @@
 //Includes de Bibliotecas
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 //Variaveis Constantes
 #define QTD_CLIENTES 30
@@ -167,6 +168,71 @@ void atualizar_estoque() {
     printf("Produto nao encontrado!\n");
 }
 
+//Funcao Para Vender Produto
+void vender_produto(){
+    char continuar;
+    char nome[50];
+    int quantidade;
+    int i;
+
+    do{
+        // Limpa a tela
+        #ifdef _WIN32
+            system("cls");
+        #else
+            system("clear");
+        #endif
+
+        printf("===== VENDA DE PRODUTOS =====\n\n");
+
+        printf("Produtos disponiveis:\n"); //Listar os Profutos
+            for (i = 0; i < QTD_PRODUTOS; i++) {
+                if (strlen(produtos[i]) > 0) {
+                printf("- %s\n", produtos[i]);
+                }
+            }
+        printf("\nNome do produto (ou digite 'sair' para cancelar): ");
+            scanf(" %49[^\n]", nome);
+            while(getchar() != '\n');
+
+        if (strcmp(nome, "sair") == 0) {
+            break;
+        }
+    for (i = 0; i < QTD_PRODUTOS; i++) {
+        if (strcmp(produtos[i], nome) == 0) {
+            printf("Quantidade: ");
+            scanf("%d", &quantidade);
+            while(getchar() != '\n');
+
+                printf("\nVenda de %d unidades de %s realizada com sucesso!\n", 
+                quantidade, produtos[i]);
+
+                printf("\nDeseja realizar outra venda? (S/N): ");
+                scanf(" %c", &continuar);
+                while(getchar() != '\n'); 
+                break;
+        }
+    }
+
+        if (i == QTD_PRODUTOS) {
+            printf("\nProduto não encontrado!\n");
+            printf("Pressione Enter para continuar...");
+            getchar();
+        }
+
+
+    }while(continuar =='S' || continuar == 's');
+        //Limpar A Tela
+        #ifdef _WIN32
+            system("cls");
+        #else
+            system("clear");
+        #endif
+
+}
+
+
+
 // ===== FUNÇÃO PRINCIPAL =====
 
 int main(){
@@ -181,6 +247,7 @@ int main(){
         printf("5. Listar produtos\n");
         printf("6. Excluir produto\n");
         printf("7. Atualizar estoque\n");
+        printf("8. Vender produto\n");
         printf("0. Sair\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
@@ -209,6 +276,9 @@ int main(){
                 break;
             case 7:
                 atualizar_estoque();
+                break;
+            case 8:
+                vender_produto();
                 break;
             case 0:
                 printf("Saindo...\n");

@@ -17,6 +17,7 @@ int main(){
         printf("5. Listar produtos\n");
         printf("6. Excluir produto\n");
         printf("7. Atualizar estoque\n");
+        printf("8. Vender produto\n");
         printf("0. Sair\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
@@ -45,6 +46,9 @@ int main(){
                     break;
                 case 7:
                     atualizar_estoque();
+                    break;
+                case 8:
+                    vender_produto();
                     break;
                 case 0:
                     printf("Saindo...\n");

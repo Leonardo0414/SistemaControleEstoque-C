@@ -9,6 +9,7 @@ void insere_produto(); //Funcao que nao retorna valor
 void listar_produtos(); //Funcao que mostrara produtos cadastrados
 void excluir_produto(); //Funcao que serve para remover produtos
 void atualizar_estoque(); //Funcao para alterar a quantidade de produtos
+void vender_produto(); //Funcao para vender produto
 
 
 extern char produtos[QTD_PRODUTOS][50]; //Indica uma variavel produtos matriz de strings(nomes) no arquivo (produto.c)
