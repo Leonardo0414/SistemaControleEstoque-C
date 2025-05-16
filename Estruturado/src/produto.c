@@ -25,7 +25,7 @@ void insere_produto() {
             i++;
         }
     printf("Nome do produto:\n");
-    scanf("%s", produtos[i]);
+    scanf(" %99[^\n]", produtos[i]);
 }
 //Funcao Para Listar Produtos
 void listar_produtos() {

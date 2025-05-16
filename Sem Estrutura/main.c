@@ -60,7 +60,7 @@ void insere_cliente() {
     }
     
     printf("Nome do cliente:\n");
-    scanf("%s", clientes[i]);
+    scanf(" %99[^\n]", clientes[i]);
 }
 
 //Funcao Para Listar Clientes
@@ -108,7 +108,7 @@ void insere_produto() {
         i++;
     }
     printf("Nome do produto:\n");
-    scanf("%s", produtos[i]);
+    scanf(" %99[^\n]", produtos[i]);
 }
 
 //Funcao Para Listar Produtos

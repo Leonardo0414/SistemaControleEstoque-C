@@ -24,7 +24,7 @@ void insere_cliente() {
         }
     
     printf("Nome do cliente:\n");
-    scanf("%s", clientes[i]);
+    scanf(" %99[^\n]", clientes[i]);
 }
 
 //Funcao Para Listar Clientes
