@@ -23,26 +23,41 @@ O projeto está disponível em duas versões:
 - Alocação de memória
 
 ## Como Executar
+
 Para sua conveniência, os executáveis já compilados estão disponíveis na raiz do projeto:
+
 - `programa.exe`: Versão estruturada
 - `sistema.exe`: Versão não estruturada (arquivo único)
 
-Basta clicar duas vezes sobre o arquivo executável desejado ou executá-lo via linha de comando ex:(sistema.exe) ou (programa.exe).
+Basta clicar duas vezes sobre o arquivo executável desejado ou executá-lo via linha de comando, por exemplo:
+
+```bash
+./sistema.exe
+./programa.exe
+```
 
 ### Compilando o Código
-Se preferir compilar o código você mesmo !! NECESSITA TER COMPILADOR INSTALADO NA MAQUINA RECOMENDO(https://www.msys2.org/docs/installer/)
 
-**Versão Estruturada:**
-**NA RAIZ DO PROJETO EXECUTE NO TERMINAL**
+> ⚠️ É necessário ter um compilador instalado na máquina.  
+> Recomendo o uso do [MSYS2](https://www.msys2.org/docs/installer/)
+
+**Versão Estruturada (na raiz do projeto):**
+
+```bash
 gcc -o programa.exe main.c src/cliente.c src/produto.c -I include
+```
 
-**NA RAIZ DO PROJETO EXECUTE NO TERMINAL**
-**Versão Não Estruturada:**
+**Versão Não Estruturada (na raiz do projeto):**
+
+```bash
 gcc -o sistema.exe main.c
+```
 
 ## Estrutura de Arquivos
 
 ### Versão Estruturada
+
+```
 projeto/
 ├── include/
 │   ├── tipos.h          # Definições de tipos e estruturas
@@ -53,11 +68,15 @@ projeto/
 │   └── produto.c        # Implementação das funções de produto
 ├── main.c               # Função principal e menu
 └── programa.exe         # Executável compilado
+```
 
 ### Versão Não Estruturada
+
+```
 projeto/
 ├── main.c               # Todo o código em um único arquivo
 └── sistema.exe          # Executável compilado
+```
 
 ## Observações
 Este projeto foi desenvolvido para fins estudantis como parte do aprendizado de programação em C. O código implementa conceitos básicos de algoritmos e estruturas de dados.
