@@ -41,28 +41,23 @@ gcc -o programa.exe main.c src/cliente.c src/produto.c -I include
 gcc -o sistema.exe main.c
 
 ## Estrutura de Arquivos
+
 ### Versão Estruturada
 projeto/
-│
 ├── include/
-│   ├── tipos.h      (definições de tipos e estruturas)
-│   ├── cliente.h    (declarações de funções de cliente)
-│   └── produto.h    (declarações de funções de produto)
-│
+│   ├── tipos.h          # Definições de tipos e estruturas
+│   ├── cliente.h        # Declarações de funções de cliente
+│   └── produto.h        # Declarações de funções de produto
 ├── src/
-│   ├── cliente.c    (implementação das funções de cliente)
-│   └── produto.c    (implementação das funções de produto)
-│
-├── main.c           (função principal e menu)
-│
-└── programa.exe     (executável compilado)
+│   ├── cliente.c        # Implementação das funções de cliente
+│   └── produto.c        # Implementação das funções de produto
+├── main.c               # Função principal e menu
+└── programa.exe         # Executável compilado
 
 ### Versão Não Estruturada
 projeto/
-│
-├── main.c  (todo o código em um único arquivo)
-│
-└── sistema.exe         (executável compilado)
+├── main.c               # Todo o código em um único arquivo
+└── sistema.exe          # Executável compilado
 
 ## Observações
 Este projeto foi desenvolvido para fins estudantis como parte do aprendizado de programação em C. O código implementa conceitos básicos de algoritmos e estruturas de dados.
