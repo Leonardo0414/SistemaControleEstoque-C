@@ -86,7 +86,7 @@ void excluir_clientes() {
     int i;
     
     printf("Nome do cliente a excluir:\n");
-    scanf("%s", nome);
+    scanf(" %49[^\n]", nome);
 
     for (i = 0; i < QTD_CLIENTES; i++) {
         if (strcmp(clientes[i], nome) == 0) {
@@ -133,7 +133,7 @@ void excluir_produto() {
     int i;
     
     printf("Nome do produto a excluir:\n");
-    scanf("%s", nome);
+    scanf(" %49[^\n]", nome);
 
     for (i = 0; i < QTD_PRODUTOS; i++) {
         if (strcmp(produtos[i], nome) == 0) {
@@ -184,6 +184,7 @@ int main(){
         printf("0. Sair\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
+        while(getchar() != '\n');
 
         switch (opcao) {
             case 1:

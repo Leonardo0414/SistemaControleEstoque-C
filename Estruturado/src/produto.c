@@ -49,7 +49,7 @@ void excluir_produto() {
     char nome[50];
     int i;
         printf("Nome do produto a excluir:\n");
-        scanf("%s", nome);
+        scanf(" %49[^\n]", nome);
 
     for (i = 0; i < QTD_PRODUTOS; i++) {
 

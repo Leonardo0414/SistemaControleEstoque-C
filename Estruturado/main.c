@@ -20,7 +20,8 @@ int main(){
         printf("0. Sair\n");
         printf("Opcao: ");
         scanf("%d", &opcao);
-
+        while(getchar() != '\n');
+        
             switch (opcao) {
                 case 1:
                     insere_cliente();

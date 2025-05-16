@@ -50,7 +50,7 @@ void excluir_clientes() {
     int i;
     
         printf("Nome do cliente a excluir:\n");
-        scanf("%s", nome);
+        scanf(" %49[^\n]", nome);
 
     for (i = 0; i < QTD_CLIENTES; i++) {
 
